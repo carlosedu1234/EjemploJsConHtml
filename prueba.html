@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego de adivinacion</title>
+  </head>
+  <body>
+    <h1>Adivina el numero</h1>
+  </body>
+
+  <script>
+    function espacio() {
+      document.write("<br><br>");
+    }
+
+    function imprimir(numero) {
+      espacio();
+      document.write("El numero correcto era: " + numero);
+    }
+
+    var numerosSeleccionado=Math.round(Math.random()*10);
+    var numeroUsuario = parseInt(
+      prompt("Adivina el numero que estoy pensando: pista esta entre el 0-10 ")
+    );
+
+    if (numeroUsuario == numerosSeleccionado) {
+      alert("Ganaste");
+    } else {
+      alert("Lo sentimos perdiste");
+      imprimir(numerosSeleccionado);
+    }
+  </script>
+</html>

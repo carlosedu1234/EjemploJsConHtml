@@ -1,0 +1,40 @@
+<meta charset="utf-8" />
+
+<canvas id="pantalla"></canvas>
+
+<script>
+  var pantalla = document.getElementById("pantalla");
+  var pincel = pantalla.getContext("2d");
+
+  pincel.fillStyle = "lightgray";
+  pincel.fillRect(0, 0, 600, 400);
+
+  let intervalo = 100;
+  let direccion = true;
+  let avance = 10;
+  let retroceso = -10;
+
+  function cambioPosicion() {
+    console.log("paso un segundo");
+    pincel.clearRect(0, 0, 600, 400);
+    pincel.fillStyle = "blue";
+    pincel.beginPath();
+    if (!direccion) {
+      intervalo = intervalo - avance;
+      if(intervalo<10){direccion = true;}
+      
+    } else if (direccion) {
+      intervalo = intervalo + avance;
+      if(intervalo>300){direccion = false;}
+    }
+
+    pincel.arc(intervalo, 10, 10, 0, 2 * 3.14);
+    pincel.fill();
+  }
+
+  function limpiarPantalla() {
+    pincel.clearRect(0, 0, 600, 400);
+  }
+
+  setInterval(cambioPosicion, 100);
+</script>

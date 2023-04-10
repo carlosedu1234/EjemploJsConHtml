@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+
+  <script>
+    function imprimirResultado(resultado, equipo) {
+      document.write(
+        "La puntuacion que lleva actualmente el equipo de " + equipo +" es : "+ resultado
+      );
+    }
+    var nombreEquipo = prompt("Digita el nombre del equipo");
+    var partidosGanados = prompt("Digite la cantidad de partidos ganados");
+    var partidosEmpatado = prompt("Digita la cantidad de partidos empatados");
+    var resultado=0;
+
+    resultado = (partidosGanados * 3)+partidosEmpatado;
+    imprimirResultado(resultado,nombreEquipo); //
+
+  </script>
+</html>

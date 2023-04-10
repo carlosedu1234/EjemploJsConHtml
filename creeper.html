@@ -1,0 +1,24 @@
+<meta charset="utf-8" />
+
+<canvas id="vista" width="600" height="400"> </canvas>
+<script>
+  var vista = document.getElementById("vista");
+  //var vista = document.querySelector('canvas');;
+  var pincel = vista.getContext("2d");
+
+  function boceto(ejex, ejey,tamaH,tamaV) {
+    pincel.fillStyle = "black";
+    pincel.fillRect(ejex, ejey, tamaH, tamaV);
+  }
+
+  pincel.fillStyle = "green";
+  pincel.fillRect(0, 0, 350, 300);
+
+  boceto(50, 60,90,90);
+  boceto(210, 60,90,90);
+  boceto(140, 150,70,100);
+  boceto(100, 190,40,110);
+  boceto(210, 190,40,110);
+
+
+</script>

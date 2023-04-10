@@ -1,0 +1,42 @@
+<meta charset="utf-8" />
+
+<canvas id="pantalla"></canvas>
+
+<script>
+
+
+  function cambioPosicion(evento) {
+    var x = evento.pageX - pantalla.offsetLeft;
+    var y = evento.pageY - pantalla.offsetTop;
+    objetivo(x, y);
+  }
+  
+
+  function objetivo(posicionx, posiciony) {
+    pincel.fillStyle = colores[contador];
+    pincel.beginPath();
+    pincel.arc(posicionx, posiciony, 10, 0, 2 * 3.14);
+    pincel.fill();
+  }
+
+  var pantalla = document.getElementById("pantalla");
+  var pincel = pantalla.getContext("2d");
+
+  pincel.fillStyle = "lightgray";
+  pincel.fillRect(0, 0, 600, 400);
+
+  pantalla.onclick = cambioPosicion;
+ 
+  let contador=0;
+  var colores = ["blue", "red", "green"];
+  function alterarColor() {
+    
+    contador++;
+    if(contador>=colores.length){contador=0}
+    console.log(colores[contador]);
+   
+    
+  }
+
+  pantalla.oncontextmenu = alterarColor;
+</script>
